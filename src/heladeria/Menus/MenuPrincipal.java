@@ -5,6 +5,7 @@
 package heladeria.Menus;
 
 import Autenticacion.ListaUsuarios;
+import Autenticacion.Usuario;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
@@ -24,15 +25,53 @@ public class MenuPrincipal {
         datos.forEach((n) -> {Collections.addAll(menu, n);});
     }
     
-    public void mostrarMenu(boolean Skip){
+    public void mostrarMenu(boolean Skip, Usuario usuario){
         indice=0;
         menu.forEach((n)-> {indice++; System.out.println(indice+"- "+n);});
         if(Skip){
             System.out.println("0- Salir");
         }
-        handler(scanner);
+        if(usuario.getAdmin()){
+            handlerAdmin();
+        } else{
+            handlerCliente();
+        }
     }
     
-    private handl
+    private void handlerCliente(){
+        int opcion =0;
+        opcion = Integer.parseInt(validaciones.ValidarDato.check("Seleccione una opcion:","Debe ingresar una opción válida",scanner,"^[0-2]$"));
+        switch(opcion){
+            case 1:
+                System.out.println("Pedirrrrr");
+                break;
+            case 2:
+                System.out.println("EDitarrr");
+                break;
+            default:
+                break;
+        }
+    
+    }
+    
+    private void handlerAdmin(){
+        int opcion =0;
+        opcion = Integer.parseInt(validaciones.ValidarDato.check("Seleccione una opcion:","Debe ingresar una opción válida",scanner,"^[0-2]$"));
+        switch(opcion){
+            case 1:
+                System.out.println("Pedirrrrr");
+                break;
+            case 2:
+                System.out.println("EDitarrr");
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            default:
+                break;
+        }
+    
+    }
     
 }

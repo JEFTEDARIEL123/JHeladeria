@@ -51,10 +51,10 @@ public class MenusAuth {
         if(Skip){
             System.out.println("0- Salir");
         }
-        selectorHandler(this.menuActual, scanner);
+        selectorHandler(this.menuActual);
     }
     
-    private void selectorHandler(int menu, Scanner scanner){
+    private void selectorHandler(int menu){
         switch(menu){
             case 1:
                 handlerLogin();
@@ -81,14 +81,18 @@ public class MenusAuth {
                 cedula = Integer.parseInt(validaciones.ValidarDato.check("Ingrese su numero de cedula","Debe ingresar un numero de cedula valido", scanner, "[0-9]+"));
                 if(Login.iniciarSesion(listaUsuarios.getUsuarios(), cedula)){
                     if(Login.esAdmin(listaUsuarios.getUsuarios(), cedula)){
-                        System.out.println("hola tony stark");
+                        ArrayList<String> menu  = new ArrayList<>();
+                        Collections.addAll(menu, "Editar Cliente", "Reportes", "Eliminar Cliente", "Visualizar Clientes");
+                        MenuPrincipal menuPrincipal = new MenuPrincipal(menu,listaUsuarios);
+                        menuPrincipal.mostrarMenu(true, listaUsuarios.getUsuarios().get(cedula));
                     }
                     
                     if(!(Login.esAdmin(listaUsuarios.getUsuarios(), cedula))){
-                        System.out.println("hola usuario");
+                        ArrayList<String> menu  = new ArrayList<>();
+                        Collections.addAll(menu, "Pedir Helado", "Editar Cliente");
+                        MenuPrincipal menuPrincipal = new MenuPrincipal(menu,listaUsuarios);
+                        menuPrincipal.mostrarMenu(true, listaUsuarios.getUsuarios().get(cedula));
                     }
-                    
-                    
                 } else {
                     System.out.println("\n⚠ El usuario ingresado no existe!\n");
                     mostrarMenu(true);
