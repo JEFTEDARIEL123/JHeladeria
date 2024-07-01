@@ -4,6 +4,7 @@
  */
 package heladeria.Menus;
 
+import Acciones.Usuario.PedirHelado;
 import Autenticacion.ListaUsuarios;
 import Autenticacion.Usuario;
 import java.util.ArrayList;
@@ -43,7 +44,7 @@ public class MenuPrincipal {
         opcion = Integer.parseInt(validaciones.ValidarDato.check("Seleccione una opcion:","Debe ingresar una opción válida",scanner,"^[0-2]$"));
         switch(opcion){
             case 1:
-                System.out.println("Pedirrrrr");
+                PedirHelado.pedirHelado();
                 break;
             case 2:
                 System.out.println("EDitarrr");

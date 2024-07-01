@@ -22,7 +22,7 @@ public class Main {
         String reset = "\u001B[0m";
         ListaUsuarios listaUsuarios = new ListaUsuarios();
         
-        System.out.println(resaltado+"Usuario root: 123\n"+reset);
+        System.out.println(resaltado+"Usuario root: 123\n"+resaltado+"Usuario normal: 400\n"+reset);
         
         //Llamar al menú de Login
         ArrayList<String> loginMenu  = new ArrayList<>();

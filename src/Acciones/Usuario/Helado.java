@@ -4,6 +4,8 @@
  */
 package Acciones.Usuario;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author jefte
@@ -11,9 +13,9 @@ package Acciones.Usuario;
 public class Helado {
     private int total;
     private String tipo, sabor;
-    private String[] extras;
+    private ArrayList<String> extras;
 
-    public Helado(String tipo, String sabor, String[] extras) {
+    public Helado(String tipo, String sabor, ArrayList<String> extras) {
         this.tipo = tipo;
         this.sabor = sabor;
         this.extras = extras;
@@ -76,7 +78,7 @@ public class Helado {
         return sabor;
     }
 
-    public String[] getExtras() {
+    public ArrayList<String> getExtras() {
         return extras;
     }
     

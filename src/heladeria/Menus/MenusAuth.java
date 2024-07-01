@@ -24,7 +24,8 @@ public class MenusAuth {
     
     public MenusAuth(ArrayList<String> datos, int menuAct, ListaUsuarios listaUsuarios){
         this.listaUsuarios = listaUsuarios;
-        listaUsuarios.agregarUsuario(123, "Admin", "Sudo", "Null", "Null");
+        listaUsuarios.agregarUsuario(123, "Admin", "Sudo", "Null", "Null", true);
+        listaUsuarios.agregarUsuario(400, "Juan", "Perez Sosa", "Masculino", "Alajuela");
         this.menuActual = menuAct;
         datos.forEach((n) -> {Collections.addAll(menu, n);});
     }
