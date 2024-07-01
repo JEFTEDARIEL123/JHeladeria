@@ -54,10 +54,9 @@ public class MenuPrincipal {
         opcion = Integer.parseInt(validaciones.ValidarDato.check("Seleccione una opcion:","Debe ingresar una opción válida",scanner,"^[0-2]$"));
         switch(opcion){
             case 1:
-                PedirHelado.pedirHelado();
+                PedirHelado.pedirHelado(listaUsuarios);
                 return opcion;
             case 2:
-                System.out.println("EDitarrr");
                 return opcion;
             case 0:
                 return opcion;

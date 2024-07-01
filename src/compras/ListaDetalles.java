@@ -4,6 +4,7 @@
  */
 package compras;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -16,7 +17,7 @@ public class ListaDetalles {
     public ListaDetalles() {
     }
 
-    public void agregarCompra(int precio, int id_compra, String tipo_helado, String sabor, String adicionales){
+    public void agregarCompra(int precio, int id_compra, String tipo_helado, String sabor, ArrayList<String> adicionales){
         Detalle detalle = new Detalle(precio, id_compra, tipo_helado, sabor, adicionales);
         detalles.put(detalle.getId(),detalle);
     }

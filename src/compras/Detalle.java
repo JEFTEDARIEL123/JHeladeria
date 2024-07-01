@@ -4,7 +4,7 @@
  */
 package compras;
 
-import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -13,10 +13,11 @@ import java.util.Random;
  */
 public class Detalle {
     private int id,precio,id_compra;
-    private String tipo_helado, sabor, adicionales;
+    private String tipo_helado, sabor;
+    private ArrayList<String> adicionales;
     Random random = new Random();
 
-    public Detalle(int precio, int id_compra, String tipo_helado, String sabor, String adicionales) {
+    public Detalle(int precio, int id_compra, String tipo_helado, String sabor, ArrayList<String> adicionales) {
         this.id = random.nextInt(5000);
         this.precio = precio;
         this.id_compra = id_compra;
@@ -45,7 +46,7 @@ public class Detalle {
         return sabor;
     }
 
-    public String getAdicionales() {
+    public ArrayList<String> getAdicionales() {
         return adicionales;
     }
     

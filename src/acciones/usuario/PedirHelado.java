@@ -4,6 +4,9 @@
  */
 package acciones.usuario;
 
+import autenticacion.ListaUsuarios;
+import compras.Compra;
+import compras.Detalle;
 import heladeria.Menus.MenuHelado;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -14,7 +17,7 @@ import java.util.Scanner;
  * @author jefte
  */
 public class PedirHelado {
-    public static void pedirHelado(){
+    public static void pedirHelado(ListaUsuarios listaUsuarios){
         Scanner scanner = new Scanner(System.in);
         String tipo = "null";
         String sabor = "null";
@@ -55,6 +58,10 @@ public class PedirHelado {
             //Se genera el objeto de tipo helado con las caracteristicas para luego agregarlo
             //a la lista de la compra
             Helado helado = new Helado(tipo, sabor, extras);
+            
+            //Compra compra = new Compra(listaUsuarios.getUsuarios().get(2).getCedula(), helado.getTotal(), listaUsuarios.getUsuarios().get(i).getProvincia());
+            
+            //Detalle detalle = new Detalle(helado.getTotal(), compra.getId(), helado.getTipo(), helado.getSabor(), helado.getExtras());
             
             System.out.println(helado.getTotal());
         }
