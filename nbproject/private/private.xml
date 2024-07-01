@@ -3,21 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/jefte/NetBeansProjects/Heladeria/src/Acciones/Admin/VisualizarClientes.java</file>
-            <file>file:/home/jefte/NetBeansProjects/Heladeria/src/validaciones/ValidarDato.java</file>
+            <file>file:/home/jefte/NetBeansProjects/Heladeria/src/acciones/EditarCliente.java</file>
+            <file>file:/home/jefte/NetBeansProjects/Heladeria/src/autenticacion/Login.java</file>
+            <file>file:/home/jefte/NetBeansProjects/Heladeria/src/compras/ListaDetalles.java</file>
+            <file>file:/home/jefte/NetBeansProjects/Heladeria/src/acciones/usuario/PedirHelado.java</file>
             <file>file:/home/jefte/NetBeansProjects/Heladeria/src/heladeria/Main.java</file>
-            <file>file:/home/jefte/NetBeansProjects/Heladeria/src/heladeria/Menus/MenusAuth.java</file>
-            <file>file:/home/jefte/NetBeansProjects/Heladeria/src/Autenticacion/Login.java</file>
-            <file>file:/home/jefte/NetBeansProjects/Heladeria/src/Acciones/Usuario/PedirHelado.java</file>
-            <file>file:/home/jefte/NetBeansProjects/Heladeria/src/Acciones/EditarCliente.java</file>
-            <file>file:/home/jefte/NetBeansProjects/Heladeria/src/Acciones/Usuario/Helado.java</file>
-            <file>file:/home/jefte/NetBeansProjects/Heladeria/src/Acciones/Admin/EliminarCliente.java</file>
-            <file>file:/home/jefte/NetBeansProjects/Heladeria/src/Autenticacion/Usuario.java</file>
-            <file>file:/home/jefte/NetBeansProjects/Heladeria/src/Autenticacion/Registrar.java</file>
-            <file>file:/home/jefte/NetBeansProjects/Heladeria/src/Autenticacion/ListaUsuarios.java</file>
             <file>file:/home/jefte/NetBeansProjects/Heladeria/src/heladeria/Menus/MenuPrincipal.java</file>
-            <file>file:/home/jefte/NetBeansProjects/Heladeria/src/Acciones/Admin/Reportes.java</file>
-            <file>file:/home/jefte/NetBeansProjects/Heladeria/src/heladeria/Menus/MenuHelado.java</file>
+            <file>file:/home/jefte/NetBeansProjects/Heladeria/src/heladeria/Menus/MenusAuth.java</file>
+            <file>file:/home/jefte/NetBeansProjects/Heladeria/src/acciones/EditarPerfil.java</file>
         </group>
     </open-files>
 </project-private>

@@ -6,6 +6,7 @@ package heladeria.Menus;
 
 import acciones.admin.EliminarCliente;
 import acciones.EditarCliente;
+import acciones.EditarPerfil;
 import acciones.usuario.PedirHelado;
 import autenticacion.ListaUsuarios;
 import autenticacion.Usuario;
@@ -43,20 +44,22 @@ public class MenuPrincipal {
         if(usuario.getAdmin()){
             mostrar = handlerAdmin();
         } else{
-            mostrar = handlerCliente();
+            mostrar = handlerCliente(usuario.getCedula());
         }
         }while(mostrar != 0);
         
     }
     //Carga el handler que verán los usuarios clientes
-    private int handlerCliente(){
+    private int handlerCliente(int cedula){
         int opcion =0;
+        
         opcion = Integer.parseInt(validaciones.ValidarDato.check("Seleccione una opcion:","Debe ingresar una opción válida",scanner,"^[0-2]$"));
         switch(opcion){
             case 1:
-                PedirHelado.pedirHelado(listaUsuarios);
+                PedirHelado.pedirHelado(listaUsuarios, cedula);
                 return opcion;
             case 2:
+                listaUsuarios.setUsuarios(EditarPerfil.editar(listaUsuarios, cedula).getUsuarios());
                 return opcion;
             case 0:
                 return opcion;
@@ -77,6 +80,7 @@ public class MenuPrincipal {
                 listaUsuarios.setUsuarios(EditarCliente.editar(listaUsuarios, cedula).getUsuarios());
                 return opcion;
             case 2:
+                System.out.println("No hay reportes :(");
                 return opcion;
             case 3:
                 cedula = Integer.parseInt(validaciones.ValidarDato.check("Ingrese la cedula del cliente", "Debe ingresar unicamente numeros", scanner, "[0-9]+"));

@@ -17,10 +17,11 @@ import java.util.Scanner;
  * @author jefte
  */
 public class PedirHelado {
-    public static void pedirHelado(ListaUsuarios listaUsuarios){
+    public static void pedirHelado(ListaUsuarios listaUsuarios, int cedula){
         Scanner scanner = new Scanner(System.in);
         String tipo = "null";
         String sabor = "null";
+        int totalNeto=0;
         ArrayList<String> extras = new ArrayList<>();
         int cantidadHelados = Integer.parseInt(validaciones.ValidarDato.check("Ingrese cuantos helados desea ordenar", "Debe ingresar un numero entero", scanner, "[0-9]+"));
         //Dependiendo de la cantidad de helados ingresados se reperiá esta funcion que crea un objeto de tipo helado
@@ -59,11 +60,15 @@ public class PedirHelado {
             //a la lista de la compra
             Helado helado = new Helado(tipo, sabor, extras);
             
-            //Compra compra = new Compra(listaUsuarios.getUsuarios().get(2).getCedula(), helado.getTotal(), listaUsuarios.getUsuarios().get(i).getProvincia());
             
-            //Detalle detalle = new Detalle(helado.getTotal(), compra.getId(), helado.getTipo(), helado.getSabor(), helado.getExtras());
+            //Creando la compra con su info
+            Compra compra = new Compra(cedula, helado.getTotal(), listaUsuarios.getUsuarios().get(cedula).getProvincia());
+            //Creando el detalle de la compra
+            Detalle detalle = new Detalle(helado.getTotal(), compra.getId(), helado.getTipo(), helado.getSabor(), helado.getExtras());
+            //Sumando el total neto para mostrarlo
+            totalNeto+=helado.getTotal();
+        }   
             
-            System.out.println(helado.getTotal());
-        }
+            System.out.println("\nTotal a pagar: " + totalNeto);
     }
 }

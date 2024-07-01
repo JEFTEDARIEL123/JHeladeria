@@ -106,7 +106,7 @@ public class MenusAuth {
                     
                     if(!(Login.esAdmin(listaUsuarios.getUsuarios(), cedula))){
                         ArrayList<String> menu  = new ArrayList<>();
-                        Collections.addAll(menu, "Pedir Helado", "Editar Cliente");
+                        Collections.addAll(menu, "Pedir Helado", "Editar Perfil");
                         MenuPrincipal menuPrincipal = new MenuPrincipal(menu,listaUsuarios);
                         menuPrincipal.mostrarMenu(true, listaUsuarios.getUsuarios().get(cedula));
                     }
