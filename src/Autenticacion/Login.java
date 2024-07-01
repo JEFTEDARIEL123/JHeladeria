@@ -11,8 +11,8 @@ import java.util.HashMap;
  * @author jefte
  */
 public class Login {
-    public static boolean iniciarSesion(HashMap<Integer, Usuario> usuarios,int cedula){
-        if(usuarios.containsKey(cedula)){
+    public static boolean iniciarSesion(HashMap<Integer, Usuario> listaUsuarios,int cedula){
+        if(listaUsuarios.containsKey(cedula)){
             return true;
         } else {
             return false;

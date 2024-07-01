@@ -21,6 +21,12 @@ public class ListaUsuarios {
         usuarios.put(cedula, usuario);
     }
 
+    public void setUsuarios(HashMap<Integer, Usuario> usuarios) {
+        this.usuarios = usuarios;
+    }
+
+    
+    
     public HashMap<Integer, Usuario> getUsuarios() {
         return usuarios;
     }

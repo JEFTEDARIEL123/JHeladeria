@@ -21,8 +21,8 @@ public class Main {
         ArrayList<String> loginMenu  = new ArrayList<>();
         //Llamar al menú de Login
         Collections.addAll(loginMenu, "Iniciar Sesión", "Registrarse");
-        Menus login = new Menus(loginMenu);
-        login.mostrarMenu(1);
+        Menus login = new Menus(loginMenu, 1);
+        login.mostrarMenu(true);
     }
     
 }

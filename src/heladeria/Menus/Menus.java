@@ -6,6 +6,7 @@ package heladeria.Menus;
 
 import Autenticacion.ListaUsuarios;
 import Autenticacion.Login;
+import Autenticacion.Registrar;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
@@ -16,20 +17,22 @@ import java.util.Scanner;
  */
 public class Menus {
     int indice=0;
-    int menuActual = 0;
+    int menuActual;
     Scanner scanner = new Scanner(System.in);
     ArrayList<String> menu = new ArrayList<>();
     ListaUsuarios listaUsuarios = new ListaUsuarios();
     
-    public Menus(ArrayList<String> datos){
+    public Menus(ArrayList<String> datos, int menuAct){
+        this.menuActual = menuAct;
         datos.forEach((n) -> {Collections.addAll(menu, n);});
     }
     
-    public void mostrarMenu(int menuAct){
-        menuActual=menuAct;
+    public void mostrarMenu(boolean Skip){
         menu.forEach((n)-> {indice++; System.out.println(indice+"- "+n);});
-        System.out.println("0- Salir");
-        selectorHandler(menuActual, scanner);
+        if(Skip){
+            System.out.println("0- Salir");
+        }
+        selectorHandler(this.menuActual, scanner);
     }
     
 
@@ -41,13 +44,16 @@ public class Menus {
             case 1:
                 handlerLogin();
                 break;
+            case 2:
+                break;
+            case 3:
+                break;
             default:
                 System.out.println("Error, no se ha identificado el menú :(");
         }
     }
     
     public void handlerLogin(){
-        menuActual=1;
         int opcion = 0;
         opcion = Integer.parseInt(validaciones.ValidarDato.check("Seleccione una opcion:","Debe ingresar una opción válida",scanner,"^[0-2]$"));
         int cedula=0;
@@ -61,10 +67,46 @@ public class Menus {
                 }
                 break;
             case 2:
-                //Registrar.registrar(usuarios);
+                listaUsuarios.setUsuarios(Registrar.registrarUsuario(listaUsuarios.getUsuarios()));
                 break;
             default:
                 break;
+            }
+    }
+    
+    public String handlerGeneros(){
+        int opcion = 0;
+        opcion = Integer.parseInt(validaciones.ValidarDato.check("Seleccione una opcion:","Debe ingresar una opción válida",scanner,"^[1-2]$"));
+        switch(opcion){
+            case 1:
+                return "Masculino";
+            case 2:
+                return "Femenino";
+            default:
+                return "null";
+            }
+    }
+    
+    public String handlerProvincias(){
+        int opcion = 0;
+        opcion = Integer.parseInt(validaciones.ValidarDato.check("Seleccione una opcion:","Debe ingresar una opción válida",scanner,"^[1-7]$"));
+        switch(opcion){
+            case 1:
+                return "San José";
+            case 2:
+                return "Alajuela";
+            case 3:
+                return "Cartago";
+            case 4:
+                return "Heredia";
+            case 5:
+                return "Guanacaste";
+            case 6:
+                return "Puntarenas";
+            case 7:
+                return "Limon";
+            default:
+                return "null";
             }
     }
 }
