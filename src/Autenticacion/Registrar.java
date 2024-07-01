@@ -4,7 +4,7 @@
  */
 package Autenticacion;
 
-import heladeria.Menus.Menus;
+import heladeria.Menus.MenusAuth;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -29,11 +29,11 @@ public class Registrar{
                 String apellidos = validaciones.ValidarDato.check("Ingrese su primer Apellido", "Debe ingresar unicamente letras", scanner, "[a-zA-Z]+") + " "+
                                     validaciones.ValidarDato.check("Ingrese su segundo Apellido", "Debe ingresar unicamente letras", scanner, "[a-zA-Z]+");
                 
-                Menus menuGenero = new Menus(generos, 3);
+                MenusAuth menuGenero = new MenusAuth(generos, 3);
                 menuGenero.mostrarMenu(false);
                 String genero = menuGenero.handlerGeneros();
                 
-                Menus menuProvincias = new Menus(provincias, 2);
+                MenusAuth menuProvincias = new MenusAuth(provincias, 2);
                 menuProvincias.mostrarMenu(false);
                 String provincia = menuProvincias.handlerProvincias();
                 

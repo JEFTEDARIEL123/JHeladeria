@@ -15,17 +15,34 @@ import java.util.Scanner;
  *
  * @author jefte
  */
-public class Menus {
+public class MenusAuth {
     int indice;
     int menuActual;
     Scanner scanner = new Scanner(System.in);
     ArrayList<String> menu = new ArrayList<>();
-    ListaUsuarios listaUsuarios = new ListaUsuarios();
+    private ListaUsuarios listaUsuarios = new ListaUsuarios();
     
-    public Menus(ArrayList<String> datos, int menuAct){
+    public MenusAuth(ArrayList<String> datos, int menuAct, ListaUsuarios listaUsuarios){
+        this.listaUsuarios = listaUsuarios;
         listaUsuarios.agregarUsuario(123, "Admin", "Sudo", "Null", "Null");
         this.menuActual = menuAct;
         datos.forEach((n) -> {Collections.addAll(menu, n);});
+    }
+    
+    
+    
+    public MenusAuth(ArrayList<String> datos, int menuAct){
+        
+        this.menuActual = menuAct;
+        datos.forEach((n) -> {Collections.addAll(menu, n);});
+    }
+    
+    public void setListaUsuarios(ListaUsuarios listaUsuarios) {
+        this.listaUsuarios = listaUsuarios;
+    }
+
+    public ListaUsuarios getListaUsuarios() {
+        return listaUsuarios;
     }
     
     public void mostrarMenu(boolean Skip){
@@ -50,6 +67,8 @@ public class Menus {
                 System.out.println("Error, no se ha identificado el menú :(");
         }
     }
+
+
     
     public void handlerLogin(){
         int opcion = 0;
