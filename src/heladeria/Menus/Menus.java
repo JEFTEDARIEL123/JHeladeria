@@ -16,7 +16,7 @@ import java.util.Scanner;
  * @author jefte
  */
 public class Menus {
-    int indice=0;
+    int indice;
     int menuActual;
     Scanner scanner = new Scanner(System.in);
     ArrayList<String> menu = new ArrayList<>();
@@ -28,6 +28,7 @@ public class Menus {
     }
     
     public void mostrarMenu(boolean Skip){
+        indice=0;
         menu.forEach((n)-> {indice++; System.out.println(indice+"- "+n);});
         if(Skip){
             System.out.println("0- Salir");
@@ -55,15 +56,17 @@ public class Menus {
     
     public void handlerLogin(){
         int opcion = 0;
+        
         opcion = Integer.parseInt(validaciones.ValidarDato.check("Seleccione una opcion:","Debe ingresar una opción válida",scanner,"^[0-2]$"));
         int cedula=0;
+        
         switch(opcion){
             case 1:
                 cedula = Integer.parseInt(validaciones.ValidarDato.check("Ingrese su numero de cedula","Debe ingresar un numero de cedula valido", scanner, "[0-9]+"));
                 if(Login.iniciarSesion(listaUsuarios.getUsuarios(), cedula)){
                     System.out.println("El usuario existe");
                 } else {
-                    System.out.println("NO existe jaja");
+                    mostrarMenu(true);
                 }
                 break;
             case 2:
@@ -72,6 +75,7 @@ public class Menus {
             default:
                 break;
             }
+        
     }
     
     public String handlerGeneros(){
