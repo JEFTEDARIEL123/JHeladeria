@@ -36,10 +36,6 @@ public class Menus {
         selectorHandler(this.menuActual, scanner);
     }
     
-
-    
-
-    
     public void selectorHandler(int menu, Scanner scanner){
         switch(menu){
             case 1:
@@ -71,6 +67,7 @@ public class Menus {
                 break;
             case 2:
                 listaUsuarios.setUsuarios(Registrar.registrarUsuario(listaUsuarios.getUsuarios()));
+                mostrarMenu(true);
                 break;
             default:
                 break;
