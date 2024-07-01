@@ -16,10 +16,10 @@ import java.util.Scanner;
  * @author jefte
  */
 public class MenusAuth {
-    int indice;
-    int menuActual;
-    Scanner scanner = new Scanner(System.in);
-    ArrayList<String> menu = new ArrayList<>();
+    private int indice;
+    private int menuActual;
+    private Scanner scanner = new Scanner(System.in);
+    private ArrayList<String> menu = new ArrayList<>();
     private ListaUsuarios listaUsuarios = new ListaUsuarios();
     
     public MenusAuth(ArrayList<String> datos, int menuAct, ListaUsuarios listaUsuarios){
@@ -54,7 +54,7 @@ public class MenusAuth {
         selectorHandler(this.menuActual, scanner);
     }
     
-    public void selectorHandler(int menu, Scanner scanner){
+    private void selectorHandler(int menu, Scanner scanner){
         switch(menu){
             case 1:
                 handlerLogin();
@@ -70,7 +70,7 @@ public class MenusAuth {
 
 
     
-    public void handlerLogin(){
+    private void handlerLogin(){
         int opcion = 0;
         
         opcion = Integer.parseInt(validaciones.ValidarDato.check("Seleccione una opcion:","Debe ingresar una opción válida",scanner,"^[0-2]$"));
