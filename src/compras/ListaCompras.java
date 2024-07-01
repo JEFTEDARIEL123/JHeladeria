@@ -17,12 +17,12 @@ public class ListaCompras {
     public ListaCompras() {
     }
 
-    public void agregarCompra(int cedula, String nombre, String apellidos, String genero, String provincia){
-        Compra compra = new Compra(cedula, nombre, apellidos, genero, provincia);
-        compras.put(cedula, compra);
+    public void agregarCompra(int cedula, int montoTotal, String provincia){
+        Compra compra = new Compra(cedula, montoTotal, provincia);
+        compras.put(compra.getId(),compra);
     }
 
-    }
+    
     public void setCompras(HashMap<Integer, Compra> compras) {
         this.compras = compras;
     }
