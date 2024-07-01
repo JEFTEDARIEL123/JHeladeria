@@ -18,4 +18,12 @@ public class Login {
             return false;
         }
     }
+    
+    public static boolean esAdmin(HashMap<Integer, Usuario> listaUsuarios,int cedula){
+        if(listaUsuarios.get(cedula).getAdmin()){
+            return true;
+        } else{
+            return false;
+        }
+    }
 }

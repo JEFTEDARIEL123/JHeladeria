@@ -23,6 +23,7 @@ public class Menus {
     ListaUsuarios listaUsuarios = new ListaUsuarios();
     
     public Menus(ArrayList<String> datos, int menuAct){
+        listaUsuarios.agregarUsuario(123, "Admin", "Sudo", "Null", "Null");
         this.menuActual = menuAct;
         datos.forEach((n) -> {Collections.addAll(menu, n);});
     }
@@ -60,8 +61,17 @@ public class Menus {
             case 1:
                 cedula = Integer.parseInt(validaciones.ValidarDato.check("Ingrese su numero de cedula","Debe ingresar un numero de cedula valido", scanner, "[0-9]+"));
                 if(Login.iniciarSesion(listaUsuarios.getUsuarios(), cedula)){
-                    System.out.println("El usuario existe");
+                    if(Login.esAdmin(listaUsuarios.getUsuarios(), cedula)){
+                        System.out.println("hola tony stark");
+                    }
+                    
+                    if(!(Login.esAdmin(listaUsuarios.getUsuarios(), cedula))){
+                        System.out.println("hola usuario");
+                    }
+                    
+                    
                 } else {
+                    System.out.println("\n⚠ El usuario ingresado no existe!\n");
                     mostrarMenu(true);
                 }
                 break;

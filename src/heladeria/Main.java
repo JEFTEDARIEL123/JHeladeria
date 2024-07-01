@@ -17,7 +17,9 @@ public class Main {
      */
     
     public static void main(String[] args) {
-        
+        String resaltado ="\u001B[33;1m";
+        String reset = "\u001B[0m";
+        System.out.println(resaltado+"Usuario root: 123\n"+reset);
         ArrayList<String> loginMenu  = new ArrayList<>();
         //Llamar al menú de Login
         Collections.addAll(loginMenu, "Iniciar Sesión", "Registrarse");

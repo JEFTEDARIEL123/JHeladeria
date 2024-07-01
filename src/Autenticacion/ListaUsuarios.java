@@ -17,7 +17,7 @@ public class ListaUsuarios {
     }
 
     public void agregarUsuario(int cedula, String nombre, String apellidos, String genero, String provincia){
-        Usuario usuario = new Usuario(cedula, nombre, apellidos, genero, provincia);
+        Usuario usuario = new Usuario(cedula, nombre, apellidos, genero, provincia, true);
         usuarios.put(cedula, usuario);
     }
 

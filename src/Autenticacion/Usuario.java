@@ -11,6 +11,7 @@ package Autenticacion;
 public class Usuario {
     private int cedula;
     private String nombre, apellidos, genero, provincia;
+    private Boolean admin;
 
     public Usuario(int cedula, String nombre, String apellidos, String genero, String provincia) {
         this.cedula = cedula;
@@ -18,8 +19,24 @@ public class Usuario {
         this.apellidos = apellidos;
         this.genero = genero;
         this.provincia = provincia;
+        this.admin = false;
     }
 
+    public void setAdmin(Boolean admin) {
+        this.admin = admin;
+    }
+
+    public Boolean getAdmin() {
+        return admin;
+    }
+    public Usuario(int cedula, String nombre, String apellidos, String genero, String provincia, Boolean admin) {
+        this.cedula = cedula;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.genero = genero;
+        this.provincia = provincia;
+        this.admin = admin;
+    }
     public int getCedula() {
         return cedula;
     }
