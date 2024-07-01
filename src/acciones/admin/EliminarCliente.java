@@ -13,6 +13,7 @@ import java.util.Scanner;
  */
 public class EliminarCliente {
     public static ListaUsuarios eliminar(ListaUsuarios listaUsuarios, int cedula){
+        //Se da un feedback al usuario de que cliente específicamente se eliminó
        Scanner scanner = new Scanner(System.in);
        System.out.println("Se eliminó correctamente el usuario: ");
        System.out.println("Es Admin: "+ listaUsuarios.getUsuarios().get(cedula).getAdmin() + 
@@ -21,6 +22,7 @@ public class EliminarCliente {
                             "\nGenero: "+ listaUsuarios.getUsuarios().get(cedula).getGenero() +
                               "\nProvincia: "+ listaUsuarios.getUsuarios().get(cedula).getProvincia()+ "\n ");
        listaUsuarios.getUsuarios().remove(cedula);
+       //Y se devuelve la lista de usuarios actualizada
        return listaUsuarios;
 
     }

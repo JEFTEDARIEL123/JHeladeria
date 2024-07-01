@@ -14,7 +14,9 @@ public class Helado {
     private int total;
     private String tipo, sabor;
     private ArrayList<String> extras;
-
+    
+    //Clase base para gestionar cada helado
+    //Acá mismo se establece el precio final del helado por separado dependiendo de sus caracteristicas
     public Helado(String tipo, String sabor, ArrayList<String> extras) {
         this.tipo = tipo;
         this.sabor = sabor;

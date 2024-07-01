@@ -20,13 +20,16 @@ public class Main {
      */
     
     public static void main(String[] args) {
+        //Ambas variables es para resaltar los usuarios creados por defecto
         String resaltado ="\u001B[33;1m";
         String reset = "\u001B[0m";
+        
+        //Estructuras de datos apra almacenar la informacion del sistema
         ListaUsuarios listaUsuarios = new ListaUsuarios();
         ListaCompras listaCompras = new ListaCompras();
         ListaDetalles listaDetalles = new ListaDetalles();
         
-        
+        //info de los usuarios pre cargados
         System.out.println(resaltado+"Usuario root: 123\n"+resaltado+"Usuario normal: 400\n"+reset);
         
         //Llamar al menú de Login

@@ -14,12 +14,15 @@ import java.util.Scanner;
 public class EditarCliente {
     public static ListaUsuarios editar(ListaUsuarios listaUsuarios, int cedula){
        Scanner scanner = new Scanner(System.in);
+       //Imprime la informarcion del cliente que se eligió para editar
        System.out.println("1- Es Admin: "+ listaUsuarios.getUsuarios().get(cedula).getAdmin() + 
                         "\n2- Nombre: " + listaUsuarios.getUsuarios().get(cedula).getNombre() +
                           "\n3- Apellidos: "+ listaUsuarios.getUsuarios().get(cedula).getApellidos() +
                             "\n4- Genero: "+ listaUsuarios.getUsuarios().get(cedula).getGenero() +
                               "\n5- Provincia: "+ listaUsuarios.getUsuarios().get(cedula).getProvincia()+ "\n ");
        int campo = Integer.parseInt(validaciones.ValidarDato.check("Ingrese el campo a modificar", "Opcion invalida", scanner, "^[1-5]$"));
+       
+       //Dependiendo del campo elegido se actualiza su informacion por la nueva ingresada
        switch(campo){
             case 1:
                 listaUsuarios.getUsuarios().get(cedula).setAdmin(Boolean.parseBoolean(validaciones.ValidarDato.check("Ingrese true o false", "error, dato invalido", scanner, "true|false")));
@@ -38,6 +41,8 @@ public class EditarCliente {
                 break;
                 
         }
+       
+       //Se retorna la lista actualizada con los cambios
        return listaUsuarios;
 
     }

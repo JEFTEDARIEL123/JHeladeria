@@ -11,6 +11,7 @@ import java.util.Scanner;
  * @author jefte
  */
 public class ValidarDato {
+        //Metodo estático para validar cualquier dato que se ingrese al sistema.
         public static String check(String msg,String err, Scanner scanner,String regex){
         System.out.println(msg);
         while(true){

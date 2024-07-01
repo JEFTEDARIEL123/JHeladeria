@@ -11,6 +11,10 @@ import java.util.HashMap;
  * @author jefte
  */
 public class Login {
+    //Clase con métodos staticos, simplemente es para verificar la autenticacion del usuario
+    // asi como si es o no administrador
+    
+    //Aca validamos la existencia del usuario, si es verdadera, se da acceso
     public static boolean iniciarSesion(HashMap<Integer, Usuario> listaUsuarios,int cedula){
         if(listaUsuarios.containsKey(cedula)){
             return true;
@@ -18,7 +22,7 @@ public class Login {
             return false;
         }
     }
-    
+    //Aca se valida si es administrador del sistema
     public static boolean esAdmin(HashMap<Integer, Usuario> listaUsuarios,int cedula){
         if(listaUsuarios.get(cedula).getAdmin()){
             return true;

@@ -11,6 +11,8 @@ import java.util.HashMap;
  * @author jefte
  */
 public class ListaUsuarios {
+    
+    //Clase para gestionar la lista de los usuarios del sistema
     private HashMap <Integer, Usuario> usuarios = new HashMap<>();
 
     public ListaUsuarios() {

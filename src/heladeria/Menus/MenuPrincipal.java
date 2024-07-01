@@ -23,11 +23,14 @@ public class MenuPrincipal {
     private ArrayList<String> menu = new ArrayList<>();
     private ListaUsuarios listaUsuarios = new ListaUsuarios();
     
+    //Metodo construcctor con una lista de usuarios y los datos del menú
     public MenuPrincipal(ArrayList<String> datos, ListaUsuarios listaUsuarios){
         this.listaUsuarios = listaUsuarios;
         datos.forEach((n) -> {Collections.addAll(menu, n);});
     }
     
+    //Mostramos el menú y con el Skip preguntamos si se quiere mostrar y
+    //permitir la opcion 0- Salir
     public void mostrarMenu(boolean Skip, Usuario usuario){
         int mostrar=1;
         do{
@@ -45,7 +48,7 @@ public class MenuPrincipal {
         }while(mostrar != 0);
         
     }
-    
+    //Carga el handler que verán los usuarios clientes
     private int handlerCliente(){
         int opcion =0;
         opcion = Integer.parseInt(validaciones.ValidarDato.check("Seleccione una opcion:","Debe ingresar una opción válida",scanner,"^[0-2]$"));
@@ -63,7 +66,7 @@ public class MenuPrincipal {
         }
     
     }
-    
+    //Carga el handler que veran los Administradores
     private int handlerAdmin(){
         int opcion =0;
         int cedula=0;

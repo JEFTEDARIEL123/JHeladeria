@@ -13,7 +13,10 @@ import java.util.Scanner;
 /**
  *
  * @author jefte
+ * 
  */
+
+// Dios mio esta clase...
 public class MenuHelado {
     
     private int indice;
@@ -41,6 +44,8 @@ public class MenuHelado {
         selectorHandler(selector);
     }
     
+    //Se encarga de ejecutar el handler respectivo
+    //Desde elegir el tipo, hasta el sabor y los extras
     private void selectorHandler(int selector){
         switch(selector){
             case 1:
@@ -69,6 +74,7 @@ public class MenuHelado {
         }
     }
     
+    //Segun el tipo elegido cargara un menú con los diferentes subtipos de helados
     private void handlerTipo(){
         int opcion =0;
         opcion = Integer.parseInt(validaciones.ValidarDato.check("Seleccione una opcion:","Debe ingresar una opción válida",scanner,"^[1-5]$"));
@@ -113,6 +119,8 @@ public class MenuHelado {
         }
     
     }
+    
+    //Handler para el subtipo de cono
     private void handlerCono(){
         int opcion =0;
         opcion = Integer.parseInt(validaciones.ValidarDato.check("Seleccione una opcion:","Debe ingresar una opción válida",scanner,"^[1-3]$"));
@@ -128,6 +136,8 @@ public class MenuHelado {
                 break;
         }
     }
+    
+    //Handler para el subtipo de cono especial
     private void handlerConoEspecial(){
         int opcion =0;
         opcion = Integer.parseInt(validaciones.ValidarDato.check("Seleccione una opcion:","Debe ingresar una opción válida",scanner,"^[1-2]$"));
@@ -140,6 +150,8 @@ public class MenuHelado {
                 break;
         }
     }
+    
+    //Handler para el subtipo de copa
     private void handlerCopa(){
         int opcion =0;
         opcion = Integer.parseInt(validaciones.ValidarDato.check("Seleccione una opcion:","Debe ingresar una opción válida",scanner,"^[1-3]$"));
@@ -156,6 +168,7 @@ public class MenuHelado {
         }
     }
     
+    //Handler para el subtipo de paletas
     private void handlerPaletas(){
         int opcion =0;
         opcion = Integer.parseInt(validaciones.ValidarDato.check("Seleccione una opcion:","Debe ingresar una opción válida",scanner,"^[1-3]$"));
@@ -172,6 +185,7 @@ public class MenuHelado {
         }
     }
     
+    //Handler para el subtipo de sandwich, basicamente lo mismo todo el rato
     private void handlerSandwich(){
         int opcion =0;
         opcion = Integer.parseInt(validaciones.ValidarDato.check("Seleccione una opcion:","Debe ingresar una opción válida",scanner,"^[1-2]$"));
@@ -185,6 +199,7 @@ public class MenuHelado {
         }
     }
     
+    //Handler para el sabor del helado
     private void handlerSabor(){
         int opcion =0;
         opcion = Integer.parseInt(validaciones.ValidarDato.check("Seleccione una opcion:","Debe ingresar una opción válida",scanner,"(10)|(11)|(12)|(13)|(^[1-9]$)"));
@@ -231,6 +246,7 @@ public class MenuHelado {
         }
     }
     
+    //Por ultimo el handler para los extras o topings del helado
     private void handlerExtra(){
         int opcion =0;
         opcion = Integer.parseInt(validaciones.ValidarDato.check("Seleccione una opcion:","Debe ingresar una opción válida",scanner,"^[1-4]$"));
@@ -249,4 +265,5 @@ public class MenuHelado {
                 break;   
         }
     }
+    
 }

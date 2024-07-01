@@ -12,7 +12,7 @@ public class Usuario {
     private int cedula;
     private String nombre, apellidos, genero, provincia;
     private Boolean admin;
-
+    //Clase base para crear los usuarios, asi como sus getters y setters para actualizar informacion del perfil
     public Usuario(int cedula, String nombre, String apellidos, String genero, String provincia) {
         this.cedula = cedula;
         this.nombre = nombre;

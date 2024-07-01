@@ -4,10 +4,32 @@
  */
 package compras;
 
+import compras.Compra;
+import java.util.HashMap;
+
 /**
  *
  * @author jefte
  */
 public class ListaCompras {
+    private HashMap <Integer, Compra> compras = new HashMap<>();
+
+    public ListaCompras() {
+    }
+
+    public void agregarCompra(int cedula, String nombre, String apellidos, String genero, String provincia){
+        Compra compra = new Compra(cedula, nombre, apellidos, genero, provincia);
+        compras.put(cedula, compra);
+    }
+
+    }
+    public void setCompras(HashMap<Integer, Compra> compras) {
+        this.compras = compras;
+    }
+
     
+    
+    public HashMap<Integer, Compra> getCompras() {
+        return compras;
+    }
 }
