@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Acciones;
+package acciones;
 
-import Autenticacion.ListaUsuarios;
+import autenticacion.ListaUsuarios;
 import java.util.Scanner;
 
 /**
@@ -18,7 +18,7 @@ public class EditarCliente {
                         "\n2- Nombre: " + listaUsuarios.getUsuarios().get(cedula).getNombre() +
                           "\n3- Apellidos: "+ listaUsuarios.getUsuarios().get(cedula).getApellidos() +
                             "\n4- Genero: "+ listaUsuarios.getUsuarios().get(cedula).getGenero() +
-                              "\n5- Provincia: "+ listaUsuarios.getUsuarios().get(cedula).getProvincia());
+                              "\n5- Provincia: "+ listaUsuarios.getUsuarios().get(cedula).getProvincia()+ "\n ");
        int campo = Integer.parseInt(validaciones.ValidarDato.check("Ingrese el campo a modificar", "Opcion invalida", scanner, "^[1-5]$"));
        switch(campo){
             case 1:
@@ -39,11 +39,6 @@ public class EditarCliente {
                 
         }
        return listaUsuarios;
-       
-       
-       
-       
-    
-       
+
     }
 }

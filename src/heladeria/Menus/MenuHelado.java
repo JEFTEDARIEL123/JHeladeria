@@ -4,8 +4,8 @@
  */
 package heladeria.Menus;
 
-import Autenticacion.ListaUsuarios;
-import Autenticacion.Usuario;
+import autenticacion.ListaUsuarios;
+import autenticacion.Usuario;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;

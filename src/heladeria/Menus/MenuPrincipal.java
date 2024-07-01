@@ -4,10 +4,11 @@
  */
 package heladeria.Menus;
 
-import Acciones.EditarCliente;
-import Acciones.Usuario.PedirHelado;
-import Autenticacion.ListaUsuarios;
-import Autenticacion.Usuario;
+import acciones.admin.EliminarCliente;
+import acciones.EditarCliente;
+import acciones.usuario.PedirHelado;
+import autenticacion.ListaUsuarios;
+import autenticacion.Usuario;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
@@ -65,19 +66,22 @@ public class MenuPrincipal {
     
     private int handlerAdmin(){
         int opcion =0;
-        opcion = Integer.parseInt(validaciones.ValidarDato.check("Seleccione una opcion:","Debe ingresar una opción válida",scanner,"^[0-2]$"));
+        int cedula=0;
+        opcion = Integer.parseInt(validaciones.ValidarDato.check("Seleccione una opcion:","Debe ingresar una opción válida",scanner,"^[0-4]$"));
         do{
             switch(opcion){
             case 1:
-                int cedula = Integer.parseInt(validaciones.ValidarDato.check("Ingrese la cedula del cliente", "Debe ingresar unicamente numeros", scanner, "[0-9]+"));
+                cedula = Integer.parseInt(validaciones.ValidarDato.check("Ingrese la cedula del cliente", "Debe ingresar unicamente numeros", scanner, "[0-9]+"));
                 listaUsuarios.setUsuarios(EditarCliente.editar(listaUsuarios, cedula).getUsuarios());
                 return opcion;
             case 2:
-                System.out.println("EDitarrr");
                 return opcion;
             case 3:
+                cedula = Integer.parseInt(validaciones.ValidarDato.check("Ingrese la cedula del cliente", "Debe ingresar unicamente numeros", scanner, "[0-9]+"));
+                listaUsuarios.setUsuarios(EliminarCliente.eliminar(listaUsuarios, cedula).getUsuarios());
                 return opcion;
             case 4:
+                listaUsuarios.getUsuarios().forEach((key, value) -> {System.out.println("\nAdmin: "+value.getAdmin()+"\nCedula:"+value.getCedula()+"\nNombre: " + value.getNombre()+"\nApellidos: "+value.getApellidos()+"\nGenero: "+value.getGenero()+"\nProvincia: "+ value.getProvincia()+"\n");});
                 return opcion;
             case 0:
                 return opcion;

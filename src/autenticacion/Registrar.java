@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Autenticacion;
+package autenticacion;
 
 import heladeria.Menus.MenusAuth;
 import java.util.ArrayList;
@@ -29,9 +29,9 @@ public class Registrar{
                 String apellidos = validaciones.ValidarDato.check("Ingrese su primer Apellido", "Debe ingresar unicamente letras", scanner, "[a-zA-Z]+") + " "+
                                     validaciones.ValidarDato.check("Ingrese su segundo Apellido", "Debe ingresar unicamente letras", scanner, "[a-zA-Z]+");
                 
-                MenusAuth menuGenero = new MenusAuth(generos, 3);
-                menuGenero.mostrarMenu(false);
-                String genero = menuGenero.handlerGeneros();
+                MenusAuth menuGeneros = new MenusAuth(generos, 2);
+                menuGeneros.mostrarMenu(false);
+                String genero = menuGeneros.handlerProvincias();
                 
                 MenusAuth menuProvincias = new MenusAuth(provincias, 2);
                 menuProvincias.mostrarMenu(false);

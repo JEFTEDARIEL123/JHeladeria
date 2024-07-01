@@ -4,9 +4,9 @@
  */
 package heladeria.Menus;
 
-import Autenticacion.ListaUsuarios;
-import Autenticacion.Login;
-import Autenticacion.Registrar;
+import autenticacion.ListaUsuarios;
+import autenticacion.Login;
+import autenticacion.Registrar;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
@@ -17,7 +17,7 @@ import java.util.Scanner;
  */
 public class MenusAuth {
     private int indice;
-    private int menuActual;
+    private int menuActual, mostrar;
     private Scanner scanner = new Scanner(System.in);
     private ArrayList<String> menu = new ArrayList<>();
     private ListaUsuarios listaUsuarios = new ListaUsuarios();
@@ -47,7 +47,7 @@ public class MenusAuth {
     }
     
     public void mostrarMenu(boolean Skip){
-        int mostrar=1;
+        mostrar=1;
         do{
         indice=0;
         menu.forEach((n)-> {indice++; System.out.println(indice+"- "+n);});
@@ -62,6 +62,10 @@ public class MenusAuth {
         switch(menu){
             case 1:
                 return handlerLogin();
+            case 2:
+                return 0;
+            case 3:
+                return 0;
             default:
                 System.out.println("Error, no se ha identificado el menú :(");
                 return 1;
@@ -103,7 +107,7 @@ public class MenusAuth {
             case 2:
                 listaUsuarios.setUsuarios(Registrar.registrarUsuario(listaUsuarios.getUsuarios()));
                 mostrarMenu(true);
-                return opcion;
+                return 0;
             default:
                 return opcion;
             }
