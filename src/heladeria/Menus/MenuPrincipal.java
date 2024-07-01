@@ -28,52 +28,63 @@ public class MenuPrincipal {
     }
     
     public void mostrarMenu(boolean Skip, Usuario usuario){
+        int mostrar=1;
+        do{
         indice=0;
+        
         menu.forEach((n)-> {indice++; System.out.println(indice+"- "+n);});
         if(Skip){
             System.out.println("0- Salir");
         }
         if(usuario.getAdmin()){
-            handlerAdmin();
+            mostrar = handlerAdmin();
         } else{
-            handlerCliente();
+            mostrar = handlerCliente();
         }
+        }while(mostrar != 0);
+        
     }
     
-    private void handlerCliente(){
+    private int handlerCliente(){
         int opcion =0;
         opcion = Integer.parseInt(validaciones.ValidarDato.check("Seleccione una opcion:","Debe ingresar una opción válida",scanner,"^[0-2]$"));
         switch(opcion){
             case 1:
                 PedirHelado.pedirHelado();
-                break;
+                return opcion;
             case 2:
                 System.out.println("EDitarrr");
-                break;
+                return opcion;
+            case 0:
+                return opcion;
             default:
-                break;
+                return opcion;
         }
     
     }
     
-    private void handlerAdmin(){
+    private int handlerAdmin(){
         int opcion =0;
         opcion = Integer.parseInt(validaciones.ValidarDato.check("Seleccione una opcion:","Debe ingresar una opción válida",scanner,"^[0-2]$"));
-        switch(opcion){
+        do{
+            switch(opcion){
             case 1:
                 int cedula = Integer.parseInt(validaciones.ValidarDato.check("Ingrese la cedula del cliente", "Debe ingresar unicamente numeros", scanner, "[0-9]+"));
-                EditarCliente.editar(listaUsuarios, cedula);
-                break;
+                listaUsuarios.setUsuarios(EditarCliente.editar(listaUsuarios, cedula).getUsuarios());
+                return opcion;
             case 2:
                 System.out.println("EDitarrr");
-                break;
+                return opcion;
             case 3:
-                break;
+                return opcion;
             case 4:
-                break;
+                return opcion;
+            case 0:
+                return opcion;
             default:
-                break;
-        }
+                return opcion;
+            }
+        } while (opcion == 0);
     
     }
     

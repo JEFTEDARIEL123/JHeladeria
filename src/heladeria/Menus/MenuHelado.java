@@ -233,7 +233,7 @@ public class MenuHelado {
     
     private void handlerExtra(){
         int opcion =0;
-        opcion = Integer.parseInt(validaciones.ValidarDato.check("Seleccione una opcion:","Debe ingresar una opción válida",scanner,"^[1-2]$"));
+        opcion = Integer.parseInt(validaciones.ValidarDato.check("Seleccione una opcion:","Debe ingresar una opción válida",scanner,"^[1-4]$"));
         switch(opcion){
             case 1:
                 this.dato = "Cereales";

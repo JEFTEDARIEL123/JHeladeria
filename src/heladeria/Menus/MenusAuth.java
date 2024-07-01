@@ -47,37 +47,38 @@ public class MenusAuth {
     }
     
     public void mostrarMenu(boolean Skip){
+        int mostrar=1;
+        do{
         indice=0;
         menu.forEach((n)-> {indice++; System.out.println(indice+"- "+n);});
         if(Skip){
             System.out.println("0- Salir");
         }
-        selectorHandler(this.menuActual);
+        mostrar = selectorHandler(this.menuActual);
+        }while(mostrar != 0);
     }
     
-    private void selectorHandler(int menu){
+    private int selectorHandler(int menu){
         switch(menu){
             case 1:
-                handlerLogin();
-                break;
-            case 2:
-                break;
-            case 3:
-                break;
+                return handlerLogin();
             default:
                 System.out.println("Error, no se ha identificado el menú :(");
+                return 1;
         }
     }
 
 
     
-    private void handlerLogin(){
+    private int handlerLogin(){
         int opcion = 0;
         
         opcion = Integer.parseInt(validaciones.ValidarDato.check("Seleccione una opcion:","Debe ingresar una opción válida",scanner,"^[0-2]$"));
         int cedula=0;
         
         switch(opcion){
+            case 0:
+                return opcion;
             case 1:
                 cedula = Integer.parseInt(validaciones.ValidarDato.check("Ingrese su numero de cedula","Debe ingresar un numero de cedula valido", scanner, "[0-9]+"));
                 if(Login.iniciarSesion(listaUsuarios.getUsuarios(), cedula)){
@@ -98,13 +99,13 @@ public class MenusAuth {
                     System.out.println("\n⚠ El usuario ingresado no existe!\n");
                     mostrarMenu(true);
                 }
-                break;
+                return opcion;
             case 2:
                 listaUsuarios.setUsuarios(Registrar.registrarUsuario(listaUsuarios.getUsuarios()));
                 mostrarMenu(true);
-                break;
+                return opcion;
             default:
-                break;
+                return opcion;
             }
         
     }

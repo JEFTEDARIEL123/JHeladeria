@@ -12,7 +12,7 @@ import java.util.Scanner;
  * @author jefte
  */
 public class EditarCliente {
-    public static void editar(ListaUsuarios listaUsuarios, int cedula){
+    public static ListaUsuarios editar(ListaUsuarios listaUsuarios, int cedula){
        Scanner scanner = new Scanner(System.in);
        System.out.println("1- Es Admin: "+ listaUsuarios.getUsuarios().get(cedula).getAdmin() + 
                         "\n2- Nombre: " + listaUsuarios.getUsuarios().get(cedula).getNombre() +
@@ -25,18 +25,25 @@ public class EditarCliente {
                 listaUsuarios.getUsuarios().get(cedula).setAdmin(Boolean.parseBoolean(validaciones.ValidarDato.check("Ingrese true o false", "error, dato invalido", scanner, "true|false")));
                 break;
             case 2:
-                listaUsuarios.getUsuarios().get(cedula).setNombre(validaciones.ValidarDato.check("Ingrese true o false", "error, dato invalido", scanner, "[a-zA-Z]+"));
+                listaUsuarios.getUsuarios().get(cedula).setNombre(validaciones.ValidarDato.check("Ingrese el nuevo nombre", "error, dato invalido", scanner, "[a-zA-Z]+"));
                break;
             case 3:
-                listaUsuarios.getUsuarios().get(cedula).setApellidos(validaciones.ValidarDato.check("Ingrese true o false", "error, dato invalido", scanner, "[a-zA-Z]+"));
+                listaUsuarios.getUsuarios().get(cedula).setApellidos(validaciones.ValidarDato.check("Ingrese los apellidos", "error, dato invalido", scanner, "[a-zA-Z]+"));
                 break;
             case 4:
-                listaUsuarios.getUsuarios().get(cedula).setGenero(validaciones.ValidarDato.check("Ingrese true o false", "error, dato invalido", scanner, "Masculino|Femenino"));
+                listaUsuarios.getUsuarios().get(cedula).setGenero(validaciones.ValidarDato.check("Ingrese el gemeroe", "error, dato invalido", scanner, "Masculino|Femenino"));
                 break;
             case 5:
-                listaUsuarios.getUsuarios().get(cedula).setProvincia(validaciones.ValidarDato.check("Ingrese true o false", "error, dato invalido", scanner, "[a-zA-Z]+"));
+                listaUsuarios.getUsuarios().get(cedula).setProvincia(validaciones.ValidarDato.check("Ingrese la provincia", "error, dato invalido", scanner, "[a-zA-Z]+"));
                 break;
                 
         }
+       return listaUsuarios;
+       
+       
+       
+       
+    
+       
     }
 }
