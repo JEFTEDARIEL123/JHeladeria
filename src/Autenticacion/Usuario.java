@@ -26,6 +26,22 @@ public class Usuario {
         this.admin = admin;
     }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public void setProvincia(String provincia) {
+        this.provincia = provincia;
+    }
+
     public Boolean getAdmin() {
         return admin;
     }

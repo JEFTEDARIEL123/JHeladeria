@@ -4,6 +4,7 @@
  */
 package heladeria.Menus;
 
+import Acciones.EditarCliente;
 import Acciones.Usuario.PedirHelado;
 import Autenticacion.ListaUsuarios;
 import Autenticacion.Usuario;
@@ -60,7 +61,8 @@ public class MenuPrincipal {
         opcion = Integer.parseInt(validaciones.ValidarDato.check("Seleccione una opcion:","Debe ingresar una opción válida",scanner,"^[0-2]$"));
         switch(opcion){
             case 1:
-                System.out.println("Pedirrrrr");
+                int cedula = Integer.parseInt(validaciones.ValidarDato.check("Ingrese la cedula del cliente", "Debe ingresar unicamente numeros", scanner, "[0-9]+"));
+                EditarCliente.editar(listaUsuarios, cedula);
                 break;
             case 2:
                 System.out.println("EDitarrr");
